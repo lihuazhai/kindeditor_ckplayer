@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>插件介绍</title>
+<script charset="utf-8" src="kindeditor/plugins/kindCkplayer/ckplayer/ckplayer.js"></script>
+<style>
+li{ margin-bottom:10px;}
+</style>
+</head>
+<body>
+<div style="width:700px; float:left;">
+  <p>插件使用效果：</p>
+  <img src="example/images/add.jpg" width="706" height="296">
+  <p>发布后播放效果如下：</p>
+  <div id="a1"></div>
+  <script type="text/javascript">
+    var flashvars={
+        f:'example/video/youxi.flv',
+        c:0
+    };
+    var video=['video/youxi.flv->video/mp4'];
+    CKobject.embed('kindeditor/plugins/kindCkplayer/ckplayer/ckplayer.swf','a1','ckplayer_a1','600','400',false,flashvars,video);
+  </script>
+</div>
+<div style="width:500px; float:left;">
+  <h4>更新点：</h4>
+    <ul>
+     <li>对kindeditor版本无限制；</li>
+     <li>不改动kindeditor.js源码，可以平滑升级；</li>
+     <li>支持一个页面放置多个视频；</li>
+	   <li>增加在apache环境下，添加、显示的实例；</li>
+   </ul>
+  <h4>使用注意：</h4>
+  <ul>
+    <li>本插件路径引用是基于网站根目录的绝对路径，需要放置网站服务器的根目录下使用。</li>
+    <li>1.解压文件夹放置网站跟目录；</li>
+    <li>2.显示页面需引入 kindCkPlayer 播放器的调用代码 如：
+      <textarea style="width:500px;height:75px;"><script charset="utf-8" src="../kindeditor/plugins/insertVideo/ckplayer/ckplayer.js"></script>
+<script charset="utf-8" src="../kindeditor/plugins/insertVideo/callCkplayer.js"></script></textarea>
+路径要写正确的实际路径。
+    </li>
+  </ul>
+    <p><a href="example/index.html" target="_blank">查看使用示例</a></p>	
+    <p>如有疑问，到梨花寨网站<a href="http://www.lihuazhai.com" target="_blank">(www.lihuazhai.com)</a>交流。</p>
+</div>
+</body>
+</html>
