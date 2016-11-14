@@ -171,7 +171,6 @@ KindEditor.plugin('kindCkplayer', function(K) {
 		}
 
 		var img = self.plugin.getSelectedMedia();
-		console.log(img);
 		if (img) {
 			var attrs = K.mediaAttrs(img.attr('data-ke-tag'));
 			urlBox.val(attrs.src);

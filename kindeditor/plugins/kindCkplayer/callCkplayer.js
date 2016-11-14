@@ -21,6 +21,7 @@ $(document).ready(function() {
 		callHtml += "</script>";
 
 		$(obj).html(callHtml);
+		$(obj).removeAttr("style");
 	}
 	var init = function() {
 		var ckObjList = $(".ckplayerMsg");

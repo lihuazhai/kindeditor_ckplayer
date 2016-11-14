@@ -923,10 +923,25 @@ function _mediaClass(type) {
 function _mediaAttrs(srcTag) {
 	return _getAttrList(unescape(srcTag));
 }
+/*
 function _mediaEmbed(attrs) {
 	var html = '<embed ';
 	_each(attrs, function(key, val) {
 		html += key + '="' + val + '" ';
+	});
+	html += '/>';
+	return html;
+}*/
+/*
+*去掉 'video/x-ms-asf-plugin' 为了支持mp3在微信上播放
+*by lihuazhai_com
+**/
+function _mediaEmbed(attrs) {
+ var html = '<embed ';
+ _each(attrs, function(key, val) {
+  if(key!="type"){
+  html += key + '="' + val + '" ';
+  }
 	});
 	html += '/>';
 	return html;
@@ -4993,7 +5008,7 @@ KEditor.prototype = {
 			},
 			beforeSetHtml : function(html) {
 				/*
-				*<,>·ûºÅ×ªÒå
+				*<,>符号转义
 				*by lihuazhai_com
 				*/
 				var _my_escape = function(str){

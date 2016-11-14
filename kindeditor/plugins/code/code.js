@@ -58,7 +58,7 @@ KindEditor.plugin('code', function(K) {
 			}),
 			textarea = K('textarea', dialog.div);
 			textarea[0].focus();
-			//Òş²Ø£¬ÏÔÊ¾´úÂë¿ÉÒÔÔËĞĞÌáÊ¾
+			//éšè—ï¼Œæ˜¾ç¤ºä»£ç å¯ä»¥è¿è¡Œæç¤º
 		var selectBox = K('select', dialog.div);
 			K('label', dialog.div)[0].style.display = 'none';
 		selectBox.change(function() {
