@@ -25,7 +25,7 @@ $conn->close();
         <script charset="utf-8" src="../kindeditor/plugins/kindCkplayer/callCkplayer.js"></script> -->
 
         <script charset="utf-8" src="http://www.lihuazhai.com/qihang/share/kindCkplayer/ckplayer/ckplayer.js"></script>
-        <script charset="utf-8" src="http://www.lihuazhai.com/qihang/share/kindCkplayer/callCkplayer.js"></script>
+        <script charset="utf-8" src="../../kindeditor/plugins/kindCkplayer/callCkplayer.js"></script>
 
         <style>
         .title { margin-bottom:10px;}
@@ -38,5 +38,7 @@ $conn->close();
 		<div class="content">
         	<?php echo $row['content'] ?>
 		</div>
+                <br/>
+                <a href="./edit.php?id=<?php echo $row['id'] ?>">点击查看编辑时的效果</a>
 	</body>
 </html>

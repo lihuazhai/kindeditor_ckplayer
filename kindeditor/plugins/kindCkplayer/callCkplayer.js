@@ -22,6 +22,7 @@ $(document).ready(function() {
 
 		$(obj).html(callHtml);
 		$(obj).removeAttr("style");
+		$(obj).next("img").css("display","none");
 	}
 	var init = function() {
 		var ckObjList = $(".ckplayerMsg");

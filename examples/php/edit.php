@@ -59,12 +59,12 @@ $conn->close();
 </style>
 	</head>
 	<body>
-	<p>编辑状态如下：</p>
-        <input type="" name="title" style="height: 30px; width: 300px;margin-bottom:10px; " value="<?php echo $row['title'] ?>" />
-	<div class="content">
-         <textarea id="editor_id" name="content" style="width:700px;height:480px;">
-          <?php echo $row['content'] ?>
-        </textarea>
-	</div>
+	<p>编辑状态效果如下：</p>
+        标题：<input type="" name="title" style="height: 30px; width: 300px;margin-bottom:10px; " value="<?php echo $row['title'] ?>" />
+    	<div class="content">
+              内容：<textarea id="editor_id" name="content" style="width:700px;height:480px;">
+              <?php echo $row['content'] ?>
+            </textarea>
+    	</div>
 	</body>
 </html>

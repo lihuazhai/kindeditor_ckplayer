@@ -15,7 +15,7 @@ if (isset($_POST['go'])) {
 	$dbUser = trim($_POST['dbUser']);
 	$dbPwd = trim($_POST['dbPwd']);
 	$dbPrefix = empty($_POST['dbPrefix']) ? 'lhz_' : trim($_POST['dbPrefix']);
-	$dbName = "insert_video"; //数据库
+	$dbName = "ckplayer"; //数据库
 	$dbCharset = 'utf8';
 	$sqlFile = 'data/ckplayer.sql'; //本机导出的Sql文件
 
@@ -48,12 +48,13 @@ if (isset($_POST['go'])) {
 	mysql_select_db($dbName, $conn);
 
 	$filesql = file_get_contents($sqlFile); //读取文件内容
-	$segment = explode(";", $filesql); //通过sql语法的语句分割符进行分割
+	$segment = preg_split("/;\r\n/", $filesql); //通过sql语法的语句分割符进行分割
 
 	//循环遍历数组
 	foreach ($segment as $current) {
 		$sql = $current;
 		echo $sql;
+		echo '<br />';
 		//$revertsql = mysql_query($sql,$conn) or die ("<br>数据库表已存在！".mysql_error());
 		$revertsql = mysql_query($sql, $conn);
 		if ($revertsql) {
