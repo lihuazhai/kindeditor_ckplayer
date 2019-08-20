@@ -112,7 +112,6 @@ KindEditor.lang({
 	'plainpaste.comment' : '请使用快捷键(Ctrl+V)把内容粘贴到下面的方框里。',
 	'wordpaste.comment' : '请使用快捷键(Ctrl+V)把内容粘贴到下面的方框里。',
 	'code.pleaseInput' : '请输入程序代码。',
-	'code.ifNeedRun' : '代码可执行',
 	'link.url' : 'URL',
 	'link.linkType' : '打开类型',
 	'link.newWindow' : '新窗口',
@@ -234,4 +233,6 @@ KindEditor.lang({
 		'2.html' : '表格',
 		'3.html' : '项目编号'
 	}
-}, 'zh_CN');
+}, 'zh-CN');
+
+KindEditor.options.langType = 'zh-CN';

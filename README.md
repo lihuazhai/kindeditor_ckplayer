@@ -1,23 +1,26 @@
-#kindeditor_ckplayer
-====
+# kindeditor_ckplayer
+
 基于kindeditor的网页视频播放插件(kindCkplayer),实现在kindeditor富文本编辑器上插入ckplayer播放器.
 问题咨询：www.lihuazhai.com
 
-##代码修改
+## 代码修改
 
 如果不想覆盖原来文件，可以动手手工改代码来实现：
 default.css 443行 加
 
-``` /*插入视频*/
+```javascript
+/*插入视频*/
 .ke-icon-insertVideo {
 	background: url(ckplayer.png) 0px 0px;
 	width: 16px;
 	height: 16px;
-``` }
+}
+``` 
 
 * upload_json.php
 
-``` //文件保存目录路径
+```php
+//文件保存目录路径
 $save_path = $php_path . '../../upload/';
 //文件保存目录URL
 $save_url = $php_url . '../../upload/';
@@ -35,11 +38,13 @@ $index = strrpos($file_name,".");
 > $root_path = $php_path . '../../upload/';
 > //根目录URL，可以指定绝对路径，比如 http://www.yoursite.com/attached/
 > $root_url = $php_url . '../../upload/';
+```
 
-##使用说明：
+## 使用说明：
 1. 解压文件夹放置网站跟目录；
 2. 显示页面需引入 ckPlayer 播放器的调用代码 如：
-```<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.js"></script>
+```javascript
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.js"></script>
 <script charset="utf-8" src="http://www.lihuazhai.com/qihang/share/kindCkplayer/ckplayer/ckplayer.js"></script>
 <script charset="utf-8" src="http://www.lihuazhai.com/qihang/share/kindCkplayer/callCkplayer.js"></script>
 ```
@@ -47,4 +52,14 @@ $index = strrpos($file_name,".");
 
  * 2.建立数据库;
 注意 目录命名和视频文件名不能出现‘ckplayer’；
+
+## 注意
+
+> 上传目录需要写入权限
+
+## 更新说明
+
+1、 kindedter 从 ver 4.1.10 (2013-11-23) 升到 ver 4.1.11 (2016-03-31)
+
+2、ckplayer  从 6.8(2016.06.08) 升到 X(2017.11.01)
 

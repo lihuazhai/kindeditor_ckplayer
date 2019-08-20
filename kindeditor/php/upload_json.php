@@ -13,18 +13,18 @@ $php_path = dirname(__FILE__) . '/';
 $php_url = dirname($_SERVER['PHP_SELF']) . '/';
 
 //文件保存目录路径
-$save_path = $php_path . '../../upload/';
+$save_path = $php_path . '../attached/';
 //文件保存目录URL
-$save_url = $php_url . '../../upload/';
+$save_url = $php_url . '../attached/';
 //定义允许上传的文件扩展名
 $ext_arr = array(
 	'image' => array('gif', 'jpg', 'jpeg', 'png', 'bmp'),
 	'flash' => array('swf', 'flv'),
-	'media' => array('swf', 'flv', 'mp3','mp4','wav', 'wma', 'wmv', 'mid', 'avi', 'mpg', 'asf', 'rm', 'rmvb'),
+	'media' => array('swf', 'flv', 'mp3', 'wav', 'wma', 'wmv', 'mid', 'avi', 'mpg', 'asf', 'rm', 'rmvb'),
 	'file' => array('doc', 'docx', 'xls', 'xlsx', 'ppt', 'htm', 'html', 'txt', 'zip', 'rar', 'gz', 'bz2'),
 );
 //最大文件大小
-$max_size = 500000000;
+$max_size = 1000000;
 
 $save_path = realpath($save_path) . '/';
 
@@ -115,10 +115,8 @@ if (empty($_FILES) === false) {
 	if (!file_exists($save_path)) {
 		mkdir($save_path);
 	}
-	$index = strrpos($file_name,".");
-	$name = substr($file_name,0,$index);//纯文件名称
 	//新文件名
-	$new_file_name = $name . '_' . date("YmdHis") . '_' . rand(10000, 99999) . '.' . $file_ext;
+	$new_file_name = date("YmdHis") . '_' . rand(10000, 99999) . '.' . $file_ext;
 	//移动文件
 	$file_path = $save_path . $new_file_name;
 	if (move_uploaded_file($tmp_name, $file_path) === false) {
